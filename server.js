@@ -15,7 +15,22 @@ app.get('/', (req, res) => {
 });
 
 // Example route to fetch Clash Royale data
-app.get('/clashroyale', (req, res) => {
+app.get('/player', (req, res) => {
+    axios.get('https://api.clashroyale.com/v1/players/%23UQJQYQR', {
+      headers: {
+          'Authorization': process.env.CLASH_ROYALE_API_TOKEN
+      }
+    })
+    .then(response => {
+      res.json(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('Error fetching Clash Royale data');
+    });
+});
+// Example route to fetch Clash Royale data
+app.get('/upcomingchests', (req, res) => {
     axios.get('https://api.clashroyale.com/v1/players/%23UQJQYQR/upcomingchests', {
       headers: {
           'Authorization': process.env.CLASH_ROYALE_API_TOKEN
