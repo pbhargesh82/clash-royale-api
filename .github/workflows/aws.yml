@@ -11,6 +11,7 @@ on:
 env:
   
   AWS_REGION : ap-southeast-2 #Change to reflect your Region
+  AWS_SOURCE_ACCOUNT_ID: 905418197677
 
 # Permission can be added at job level or workflow level    
 permissions:
