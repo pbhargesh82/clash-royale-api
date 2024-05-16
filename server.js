@@ -44,6 +44,21 @@ app.get('/upcomingchests', (req, res) => {
       res.status(500).send('Error fetching Clash Royale data');
     });
 });
+// Example route to fetch Clash Royale data
+app.get('/cards', (req, res) => {
+    axios.get('https://api.clashroyale.com/v1/cards', {
+      headers: {
+          'Authorization': process.env.CLASH_ROYALE_API_TOKEN
+      }
+    })
+    .then(response => {
+      res.json(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('Error fetching Clash Royale data');
+    });
+});
 
 // Start the server
 app.listen(port, () => {
