@@ -1,7 +1,8 @@
 {
   "name": "clash-royale-api",
+  "title": "Clash Royale API",
   "version": "1.0.0",
-  "description": "Clash Royale API.",
+  "description": "Clash Royale API endpoints to access various data from Clash Royale.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
