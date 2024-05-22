@@ -5,7 +5,6 @@ const packageJson = require('./package.json');
 
 const app = express();
 const port = process.env.PORT || 3000;
-console.log(port);
 
 // Import routes
 const routes = require('./routes');
